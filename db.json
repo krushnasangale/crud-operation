@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "avatar": "assets/one.webp",
+      "name": "Krishna Sangale",
+      "email": "krishna.sangale@waiin.com",
+      "dateOfBirth": "1999-02-09",
+      "country": "India"
+    },
+    {
+      "id": 2,
+      "avatar": "assets/four.webp",
+      "name": "Sonal Karandikar",
+      "email": "sonal.karandikar@waiin.com",
+      "dateOfBirth": "2022-01-12",
+      "country": "India"
+    },
+    {
+      "id": 3,
+      "avatar": "assets/five.png",
+      "name": "Krishna",
+      "email": "krushnasangale7447@gmail.com",
+      "dateOfBirth": "1999-02-09",
+      "country": "India"
+    },
+    {
+      "id": 4,
+      "avatar": "assets/two.webp",
+      "name": "Gaurav",
+      "email": "gaurav.patil@waiin.com",
+      "dateOfBirth": "2022-01-31",
+      "country": "India"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,132 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Welcome to CRUD Operation</h1>
+            <h2 class="text-info text-center">Let's Add Employee Record</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-6 col-sm-12 col-lg-6 mt-5">
+            <div class="card mb-3 border-0" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4 mt-4">
+                        <img src="assets/one.webp" class="card-img-top" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h2 class="mb-4">Employee Info</h2>
+                            <p><strong>Emp. Id: 1</strong></p>
+                            <p><strong>Name :</strong> Krishna Devidas Sangale</p>
+                            <p><strong>Email :</strong> krishna.sangale@waiin.com</p>
+                            <p><strong>Date of Birth :</strong> 02/09/1999</p>
+                            <p><strong>Country :</strong> India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-sm-12 col-lg-6">
+            <form [formGroup]="formValue">
+                <div class="form-group mt-4">
+                    <div *ngFor="let i = index">
+                        <h3>{{i}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="avatar">Select Avatar</label>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <img src="assets/four.webp" alt="" height="40">
+                            </label>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                value="assets/four.webp" formControlName="avatar">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <img src="assets/one.webp" alt="" height="40">
+                            </label>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                value="assets/one.webp" formControlName="avatar">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <img src="assets/two.webp" alt="" height="40">
+                            </label>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                value="assets/two.webp" formControlName="avatar">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <img src="assets/three.webp" alt="" height="40">
+                            </label>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                value="assets/three.webp" formControlName="avatar">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <img src="assets/six.webp" alt="" height="40">
+                            </label>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                value="assets/six.webp" formControlName="avatar">
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-check">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                <img src="assets/five.png" alt="" height="40">
+                            </label>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                                value="assets/five.png" formControlName="avatar">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        formControlName="email">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="form-group">
+                    <label for="dateOfBirth">Date Of Birth</label>
+                    <input type="date" class="form-control" formControlName="dateOfBirth">
+                </div>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select name="country" id="country" class="form-control" formControlName="country">
+                        <option value="India">India</option>
+                        <option value="American">America</option>
+                        <option value="UK">UK</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                    </select>
+                </div>
+                <div class="form-group mt-4">
+                    <div class="row">
+                        <div class="col justify-content-center text-center">
+                            <button type="submit" class="btn btn-success" (click)="postEmployeeDetails()">Add
+                                Employee</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row mt-4">
+                <button class="btn btn-warning" routerLink="/list">Click Here to view All Records</button>
+            </div>
+        </div>
+    </div>
+</div>

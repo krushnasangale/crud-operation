@@ -1,0 +1,85 @@
+<table class="table mt-4 table-responsive">
+    <thead>
+        <tr>
+            <th>Emp. Id</th>
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Country</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of employeeAll">
+            <td>{{data.id}}</td>
+            <td><img src="{{data.avatar}}" alt="" height="35"></td>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.dateOfBirth}}</td>
+            <td>{{data.country}}</td>
+            <td class="d-flex gap-2">
+                <button class="btn btn-primary" (click)="editEmployee(data)" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
+                <button class="btn btn-danger" (click)="deleteEmployee(data)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Employee Detail</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]= "formValue">
+                    <div class="form-group">
+                        <div *ngFor="let i = index">
+                            <h3>{{i}}</h3>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="avatar">Select Avatar</label>
+                        <select name="select" id="select" class="form-control" formControlName="avatar">
+                            <option value="assets/four.webp">Female</option>
+                            <option value="assets/one.webp">Male One</option>
+                            <option value="assets/two.webp">Male Two</option>
+                            <option value="assets/three.webp">Male Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Enter Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control"  aria-describedby="emailHelp"
+                            formControlName="email">
+                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date Of Birth</label>
+                        <input type="date" class="form-control" formControlName="dateOfBirth">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select name="country" class="form-control" formControlName="country">
+                            <option value="India">India</option>
+                            <option value="American">America</option>
+                            <option value="UK">UK</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="updateEmployee()">Update Employee</button>
+            </div>
+        </div>
+    </div>
+
+
+    
